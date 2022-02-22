@@ -6,7 +6,7 @@ var corsOptions = {
 };
 // const db = require("./app/models");
 // db.sequelize.sync();
-app.use(cors(corsOptions));
+app.use(cors());
 // parse requests of content-type- applications/json
 app.use(express.json());
 // parse requests of content-type-application/x-www-form-urlencoded
@@ -39,7 +39,7 @@ app.get('/',(req, res) => {
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
  // set port , listen for requests
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT,()=>{
     console.log("listening on port ${PORT}");
 });
